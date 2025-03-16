@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: ganzo_delivery
+      POSTGRES_PASSWORD: ganzo12345
+      POSTGRES_DB: ganzo_delivery_db
+    ports:
+      - "5432:5432"
+    networks:
+      - my_network
+    restart: always
+
+networks:
+  my_network:
+    driver: bridge
